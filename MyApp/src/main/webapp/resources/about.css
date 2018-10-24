@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+body{
+	margin:0;
+    background-color: #B3D6BE  ;
+}
+.layout{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #648F75;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #4CAF50;
+}
+
+/* Add responsiveness - 
+will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #648F75;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #000;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #B3D6BE;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left:200px
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+.text1
+{
+   float: left;
+   width: 20%;
+   height: 20%;
+   text-align: justify;
+   
+}
+.text2
+{
+   float: right;
+   width: 80%;
+   height: 20%;
+  
+}
+.text3
+{
+   float: left;
+   width: 20%;
+   height: 20%;
+   text-align: justify
+}
+.text4
+{
+   float: right;
+   width: 80%;
+   height: 20%;
+}
+.GambarKiri
+{
+   float: left;
+   width: 35%;
+   height: 120% ;
+}
+.JudulKanan
+{
+   float: right;
+   width: 65%;
+   height: 65%;
+}
+.gbr
+{
+   width: 100%;
+   height: 100%;
+}
+.Isikiri
+{
+   float: right;
+   width: 65%;
+   height: 75%;
+}
+.Content1
+{
+   display: grid;
+   grid-template-columns: 40% 65%;
+   grid-template-rows: 160px 320px;
+   text-align: justify
+}
+.Content1 div
+{
+   padding: 30px;
+}
+.Content2
+{
+   display: grid;
+   grid-template-rows: 140px 140px;
+   text-align: justify
+}
+.Content2 div
+{
+   padding: 30px;
+}
+.gambar2
+{
+   float: left;
+}
+
+.isi4
+{
+   height: 100px;
+}
+.gbr1
+{
+   width:190px;
+   height: 200px;
+}
+
+ h1
+ {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    color: green;
+}
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+    font-size: 15px;
+       }
+judul
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 200px;
+    color: red
+}
+judul1
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 140px;
+    color: white;
+}
+.isin
+{
+    font-size: 12px;
+}
+
+.footer{
+	background-color:#A7F2BE;
+	
+	height:50px;	
+	text-align:center;	
+}
+.footer-content{
+	background-color:#A7F2BE;
+	text-decoration:none;	
+	position:bottom;
+    padding:20px;
+    margin-top: 100%;
+}
