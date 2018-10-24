@@ -15,24 +15,46 @@ import org.hibernate.criterion.Restrictions;
  * 
  */
 
-
+/**
+ * @method for generate table on view
+ * 
+ * */
 @SuppressWarnings("unchecked")
 public class LayoutDao {
 	//SHOW DATA FROM HIBERNATE ORDER DESC
 	public static List<Layout> getLayout(){
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		Criteria cr = (Criteria) session.createCriteria(Layout.class);
-		cr.addOrder(Order.desc("value"));
-		List<Layout> result = cr.list();
-		
+		cr.addOrder(Order.desc("value"));		
+		cr.setMaxResults(3);
+		List<Layout> result = cr.list();	
 		return result;
 	}
-
-	//EXECUTE PARAM FROM VIEW IN HIBERNATE
-	public static Integer incValue(Integer idMotor){
+	
+	public static List<Layout> getMidText(){
 		Session session= HibernateUtil.getSessionFactory().openSession();
 		Criteria cr = (Criteria) session.createCriteria(Layout.class);
-		cr.add(Restrictions.eq("idMotor", idMotor));
+		cr.addOrder(Order.asc("value"));
+		cr.setFirstResult(4);		
+		cr.setMaxResults(5);
+		List<Layout> result = cr.list();	
+		return result;
+	}
+	
+	public static List<Layout> getBottomText(){
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		Criteria cr = (Criteria) session.createCriteria(Layout.class);
+		cr.addOrder(Order.asc("value"));		
+		cr.setMaxResults(3);
+		List<Layout> result = cr.list();	
+		return result;
+	}
+	
+	//EXECUTE PARAM FROM VIEW IN HIBERNATE
+	public static int incValue(String name){
+		Session session= HibernateUtil.getSessionFactory().openSession();
+		Criteria cr = (Criteria) session.createCriteria(Layout.class);
+		cr.add(Restrictions.eq("name", name));
 		List<Layout> result = cr.list();
 		
 		//execute list value using looping  
@@ -41,21 +63,20 @@ public class LayoutDao {
 			hasil = data.getValue();
 			hasil+=1;
 		}
-		
 		return hasil;
 	}	
 
 	//method for execute hibernate using where clause
-	public static String updateLayout(Integer idMotor, int value) {
+	public static String updateLayout(String name, int value) {
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		//do execute update value in HQL
 		String hasil = "";
 		try {
 			Session session = sf.openSession();
-			String hql = "UPDATE Layout set value = :hasil "+"WHERE idMotor = :idMotor";
+			String hql = "UPDATE Layout set value = :hasil WHERE name = :name";
 			Query query = session.createQuery(hql);
 			query.setParameter("hasil", value);
-			query.setParameter("idMotor", idMotor);
+			query.setParameter("name", name);
 			
 			session.beginTransaction();
 			query.executeUpdate();
@@ -70,12 +91,13 @@ public class LayoutDao {
 	}	
 	
 	//method for execute hibernate using where clause
-	public static List<Layout> getDetail(Integer idMotor) {
+	public static List<Layout> getDetail(String name) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		String hql = "SELECT L.pictureDetail, L.pictureDetail2, L.name FROM Layout L WHERE idMotor = :idMotor";
+		String hql = "SELECT L.pictureDetail, L.pictureDetail2, L.name FROM Layout L WHERE name = :name";
 		Query query = session.createQuery(hql);
-		query.setParameter("idMotor", idMotor);
+		query.setParameter("name", name);
 		List<Layout> results = query.list();		
 		return results;
 		}	
+	
 }

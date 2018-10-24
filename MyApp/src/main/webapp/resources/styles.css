@@ -155,25 +155,35 @@ will automatically display the navbar vertically instead of horizontally on scre
 {
    	float: right;   
    	width: 20%;
-   	height: 400px;
+   	height: 550px;
    	border: 2px solid #1F7A3B;
    	
+   	
 }
+.tittle-text{
+	margin:30px;
+	color:red;
+	text-align:justify;
+}
+
 .widget-text{
 	text-decoration:none;
 	color:black;
-	font-size:20px;
+	
+	
 }
-.Content2
+.isi2
 {
-	margin-right: 50px;
-	display: grid;
-	grid-template-rows: 140px 140px;
-	text-align: justify;	
+	text-align: justify;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:20px;
+	margin-bottom:30px;
+	font-size:21px;	
 }
 .Content2 div
 {
-   padding: 30px;
+   padding: 10px;
 }
 *{margin:0px auto;}
 
@@ -198,10 +208,13 @@ td{
 	
 .bottom-text{
     margin-top:16.6%;
-    width:50%
-    
+    width:49%;        
 }
 
+.list-bottom{
+	list-style: none;
+	
+}
 {box-sizing:border-box}
 
 /* Slideshow container */
@@ -322,6 +335,8 @@ td{
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+
 
 /* Footer Section */
 .footer{

@@ -37,7 +37,7 @@
 					    <div class="numbertext">${loopStatus.count}/ 3 </div>
 					    <img class="pict" src="${pageContext.request.contextPath}/resources/image/${isi.picture}" >					    
 						<form action="${pageContext.request.contextPath}/detail" method="POST" >
-							<input type="hidden" name="name" value="${isi.idMotor}">
+							<input type="hidden" name="name" value="${isi.name}">
 					        <input class="button-text" type="submit" value="${isi.name}">				         
 				      	</form>	  
 					  </div>	
@@ -55,24 +55,14 @@
 			</div>
 				
 			<div class="Isikiri">
-				<div class="Content2">
-	                   <div class="isi">
-	                       <p> <a class="widget-text" href="${pageContext.request.contextPath}/layout"> Do you Scooter? Check it Now!</a>
-	                   </div>
-	                   <div class="isi">
-	                       <p> <a class="widget-text" href="${pageContext.request.contextPath}/layout"> Do you Chopper? Check out!</a>
-	                   </div>
-	             </div>
-	               <div class="Content2">                 
-	                   
-	                   <div class="isi4">
-	                           <p>
-	                               <a  class="widget-text" href="${pageContext.request.contextPath}/layout"> Do you Bobber? Find The best!</a>
-	                           </p>
-	                   </div>
-	               </div>
+				<h2 class="tittle-text"> FIND OUT OUR COLLECTION BELOW!</h2>
+				<c:forEach items="${table_page_mid}" var="layoutMid" varStatus="loopStatus">
+	            	<a class="widget-text" href="${pageContext.request.contextPath}/layout">
+	            	 	<h6 class="isi2"> Do you ${layoutMid.name}? Check it Now!</h6>
+	            	</a>
+	            </c:forEach> 
                </div>
-               </div>	
+               </div>	 
                <div class="middle-content">                                  
                    <h3 class="middle-content-tittle">Favourite Pages</h3><br>
 					   <table border="1">
@@ -91,9 +81,15 @@
                </div>              
                
                <div class ="bottom-text">
-	               	<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores explicabo, tempora consequatur in, 
-	               	sapiente quos at unde beatae nemo aliquid inventore distinctio nobis, alias eveniet doloribus error ipsa vel molestias?
-		            </h3>               	
+               	<h5>Find out Newest Types :</h5>
+	               	<c:forEach items="${table_page_bot}" var="layoutBwh" varStatus="loopStatus">
+	               		<ul>
+	               		<li style="list-bottom">${layoutBwh.name}</li>	               		
+	               		</ul>
+	               	</c:forEach>
+	               	
+	               	
+		                           	
                </div> 
 			<footer >
 			  <div class="footer">
